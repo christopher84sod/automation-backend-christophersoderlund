@@ -33,9 +33,7 @@ Cypress.Commands.add('LogIn', () => {
     cy.request({
         method: "POST",
         url: LOGIN_URL,
-        headers:{
-            'Content-Type': 'application/json'
-        },
+        headers:{ 'Content-Type': 'application/json'},
         body: JSON.stringify(userCredentials)
     }).then((response => {
         expect(response.status).to.eq(200)            
