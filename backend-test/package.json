@@ -6,7 +6,8 @@
   "scripts": {
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --reporter mochawesome",
-    "test": "cypress open"
+    "test": "cypress open",
+    "test:report":"cypress run --reporter mochawesome"
   },
   "keywords": [],
   "author": "",

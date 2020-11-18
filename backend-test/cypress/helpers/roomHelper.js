@@ -4,8 +4,7 @@ const urlRooms = 'http://localhost:3000/api/rooms/'
 const urlRoom = 'http://localhost:3000/api/room/'
 // Skapar ny Bill Med faker
 const faker = require('faker')
-function createRandomRoom(){
-        
+function createRandomRoom(){      
     const fakeprise = faker.finance.amount()
     const fakeavailable =  faker.random.boolean()
     const fakeanumber =  faker.random.number()
@@ -85,10 +84,10 @@ function RoomCheck(cy,number,floor,available,price){
 } 
 // Tittar hur många ID:n 
 function deleteRoom(cy){
-        cy.request({
-                method: "GET",
-                url: urlRooms,
-                headers:{
+    cy.request({
+          method: "GET",
+          url: urlRooms,
+          headers:{
                 'X-User-Auth': JSON.stringify(Cypress.env().loginToken),
                 'Content-Type': 'application/json'
                     }
@@ -109,7 +108,7 @@ function deleteRoom(cy){
 
                     }))
         
-        })) } //)) } // Slut Delete    
+})) } // Slut Delete    
   
     module.exports = {
         createRandomRoom,
